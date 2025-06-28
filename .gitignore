@@ -1,0 +1,17 @@
+# ignored folders or files
+
+# pycharm and vscode configuration
+.idea/
+.vscode/
+
+# version control
+.git/
+
+# python cache
+__pycache__/
+
+# jupyter notebook
+.ipynb_checkpoints
+
+# datasets
+# data/
