@@ -1,0 +1,28 @@
+﻿Index,Variable Abbreviation2,Variable Full Name and Description,Variable Type
+X0,bw_x0,Birth Weight: Weight of the infant at birth,Continuous
+X1,b_head_x1,Birth Head Circumference: Size of the infant's head circumference at birth,Continuous
+X2,preterm_x2,Weeks Born Preterm: Number of weeks born before the due date,Continuous
+X3,birth_o_x3,Birth Order: The order of this infant among all children in the family,Continuous
+X4,nnhealth_x4,Neonatal Health Index: Measure of health status at birth,Continuous
+X5,momage_x5,Mother's Age: Mother's actual age in years at delivery,Continuous
+X6,sex_x6,"Sex: 1 for male, 0 for female",Binary
+X7,twin_x7,Twin Status: 1 indicates the infant is one of twins,Binary
+X8,b_marr_x8,Marital Status: 1 indicates mother was married at birth,Binary
+X9,mom_lths_x9,Less than High School: 1 indicates mother's education is below high school,Binary
+X10,mom_hs_x10,High School: 1 indicates mother's highest education is high school graduation,Binary
+X11,mom_scoll_x11,Some College: 1 indicates mother received some college education but did not obtain a degree,Binary
+X12,cig_x12,Cigarettes: 1 indicates mother smoked during pregnancy,Binary
+X13,first_x13,First Born: 1 indicates this infant is the mother's first child,Binary
+X14,booze_x14,Alcohol: 1 indicates mother consumed alcohol during pregnancy,Binary
+X15,drugs_x15,Drugs: 1 indicates mother used restricted drugs during pregnancy,Binary
+X16,work_dur_x16,Worked: 1 indicates mother had employment during pregnancy,Binary
+X17,prenatal_x17,Prenatal Care: 1 indicates mother received adequate care during pregnancy,Binary
+X18,ark_x18,Site-Arkansas: Little Rock Medical Center,Binary
+X19,ein_x19,Site-Einstein: Albert Einstein College of Medicine,Binary
+X20,har_x20,Site-Harvard: Harvard University/Boston Medical Center,Binary
+X21,mia_x21,Site-Miami: University of Miami Medical Center,Binary
+X22,pen_x22,Site-Pennsylvania: University of Pennsylvania Medical Center,Binary
+X23,tex_x23,Site-Texas: University of Texas (Dallas) Medical Center,Binary
+X24,was_x24,Site-Washington: University of Washington (Seattle) Medical Center,Binary
+T,home_visit_T,Receipt of specialist home visits and childcare,Binary
+Y,cog_scores_Y,Cognitive Test Score (IQ) at age 3,Continuous

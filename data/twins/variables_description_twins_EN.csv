@@ -1,0 +1,54 @@
+Variable Name2,Description,Variable Type
+pldel_x0,"Place of delivery?(e.g., in hospital, at home).",Categorical/Ordinal
+birattnd_x1,"Attendant at birth?(e.g., physician, midwife).",Categorical/Ordinal
+brstate_x2,State of birth?code.,Categorical
+stoccfipb_x3,State and county of birth?(FIPS code).,Categorical
+mager8_x4,Mother's age?categorized into 8 groups.,Ordinal
+ormoth_x5,Original Race of Mother.,Categorical
+mrace_x6,Mother's race?(recoded/categorized).,Categorical
+meduc6_x7,Mother's education level?categorized into 6 groups.,Ordinal
+dmar_x8,Marital status?(whether mother is married).,Binary/Categorical
+mplbir_x9,Mother's place of birth?type.,Categorical/Ordinal
+mpre5_x10,Month prenatal care began?categorized into 5 groups.,Ordinal
+adequacy_x11,Adequacy of prenatal care?(composite score/category).,Ordinal
+orfath_x12,Original Race of Father.,Categorical
+frace_x13,Father's race?(recoded/categorized).,Categorical
+birmon_x14,Month of birth.,Categorical/Ordinal
+gestat10_x15,Gestational weeks prior to birth?categorized into 10 groups.,Ordinal
+csex_x16,Child's sex.,Binary/Categorical
+anemia_x17,Anemia during pregnancy.,Binary
+cardiac_x18,Cardiac disease during pregnancy.,Binary
+lung_x19,Lung disease during pregnancy.,Binary
+diabetes_x20,Diabetes during pregnancy.,Binary
+herpes_x21,Herpes during pregnancy.,Binary
+hydra_x22,Hydramnios (excess amniotic fluid) during pregnancy.,Binary
+hemo_x23,Hemoglobinopathy (blood disorder) during pregnancy.,Binary
+chyper_x24,Chronic hypertension during pregnancy.,Binary
+phyper_x25,Pregnancy-associated hypertension.,Binary
+eclamp_x26,Eclampsia during pregnancy.,Binary
+incervix_x27,Incompetent cervix during pregnancy.,Binary
+pre4000_x28,Previous infant weighed 4000g or more.,Binary
+preterm_x29,Previous preterm birth history.,Binary
+renal_x30,Renal disease (kidney issues) during pregnancy.,Binary
+rh_x31,Rh sensitization during pregnancy.,Binary
+uterine_x32,Uterine bleeding/issues during pregnancy.,Binary
+othermr_x33,Other medical risk factors.,Binary
+tobacco_x34,Tobacco use during pregnancy.,Binary
+alcohol_x35,Alcohol use during pregnancy.,Binary
+cigar6_x36,Number of cigarettes smoked per day (6 categories).,Ordinal
+drink5_x37,Number of alcoholic drinks per week (5 categories).,Ordinal
+crace_x38,Child's race.,Categorical
+data_year_x39,Year of the birth record data.,Discrete Numeric
+nprevistq_x40,Number of prenatal visits?(quartiles/groups).,Ordinal
+dfageq_x41,Father's age?(quartiles/groups).,Ordinal
+feduc6_x42,Father's education level?(6 categories).,Ordinal
+infant_id_x43,Unique infant identifier.,ID/Identifier
+dlivord_min_x44,Minimum previous live births?within the twin pair.,Discrete Numeric
+dtotord_min_x45,Minimum total deliveries?within the twin pair.,Discrete Numeric
+bord_x46,"Birth order?(1 for first born, 2 for second born).",Binary
+brstate_reg_x47,Birth state region?(regional grouping).,Categorical
+stoccfipb_reg_x48,Birth county region?(regional grouping).,Categorical
+mplbir_reg_x49,Mother's birth place region?(regional grouping).,Categorical
+wt_x50,Weight?(Infant birth weight).,Continuous Numeric
+weight01_T,"Treatment indicator?(e.g., 1=heavier twin, 0=lighter twin).",Binary
+mortality_Y,"Outcome variable?(e.g., 1=infant mortality within 1 year, 0=survival).",Binary
