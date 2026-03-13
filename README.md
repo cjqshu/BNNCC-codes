@@ -1,56 +1,37 @@
-# BNN-CC
+# 🌈 BNN-CC
 
-This is the official implementation of the paper **"[BNN-CC]()"**
+This is the implementation of the paper "[Causal structure-enhanced branch neural networks for interpretable and robust regression](https://doi.org/10.1016/j.eswa.2026.131851)", published at Expert Systems With Applications (2026).
 
-## Overview
+## 📋 Overview
 
 In this paper, we propose a novel framework called BNN-CC. The figure below illustrates the overall framework of our BNN-CC.
 
 ![framework](./framework.png)
 
-## Project directory structure
-
-<!-- get a tree directory structure
-
-## Step1
-PowerShell (PS): tree /f > tree.txt
-
-## Step2
-Put the following code into the URL (https://devtool.tech/tree) for rendering
-```sh
-+ BNNCC-codes
-  + data
-    + ihdp
-      + ihdp_npci_1-1000.train.npz.zip
-      + ihdp_npci_1-1000.test.npz.zip
-  + models
-    + bnncc_regression.py
-    + bnncc_classification.py
-  + data_loader.py
-  + utils.py
-  + causal_discovery.py
-  + main_IHDP.py
-  + requirements.txt
-  + README.md
-``` -->
+## 📁 Project directory structure
 
 ```sh
-BNNCC-codes
-├── data
-│   └── ihdp
-│       ├── ihdp_npci_1-1000.train.npz.zip
-│       └── ihdp_npci_1-1000.test.npz.zip
-├── models
-│   └── bnncc_regression.py
-├── data_loader.py
+BNNCC-codes/
+├── README.md
+├── requirements.txt
+├── LICENSE.txt
+├── main_IHDP.py
 ├── utils.py
 ├── causal_discovery.py
-├── main_IHDP.py
-├── requirements.txt
-└── README.md
+├── data_loader.py
+├── models/
+│   └── bnncc_regression.py
+└── data/
+    ├── ihdp/
+    │   ├── variables_description_IHDP_EN.csv
+    │   ├── train_df.csv
+    │   └── test_df.csv
+    └── twins/
+        ├── variables_description_twins_EN.csv
+        └── data_twins.csv
 ```
 
-## How to Run
+## 🚀 How to Run
 
 - Installation: environment and dependences.
 ```sh
@@ -70,10 +51,26 @@ pip install -r requirements.txt
 python main_IHDP.py  # Experiments on the IHDP dataset
 ```
 
-## Acknowledgements
+## 📚 Citation
+Please cite our work if you found the resources in this repository useful:
+
+```
+@article{cai2026causal,
+  title={Causal Structure-Enhanced Branch Neural Networks for Interpretable and Robust Regression},
+  author={Cai, Jiangqian and Qian, Quan},
+  journal={Expert Systems with Applications},
+  pages={131851},
+  year={2026},
+  publisher={Elsevier}
+}
+```
+
+## 🥰 Acknowledgements
 
 We would like to express our sincere gratitude to the related works and open-source codes that have served as inspiration for our project:
 
 - Gcastle package. [[github](https://github.com/huawei-noah/trustworthyAI/tree/master/gcastle)]
+
+- NNSIP package. [[github](https://github.com/RogerG2/NNSIP)]
 
 - Lazypredict package. [[github](https://github.com/shankarpandala/lazypredict)]
