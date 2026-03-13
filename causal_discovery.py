@@ -11,11 +11,8 @@ class DAGCreator:
         self.max_samples = max_samples
         self.method = method
         self.predefined_dags = {
-            "cpt": self.load_predefined_cpt_icalingam,
-            "jobs": self.load_predefined_jobs_icalingam,
+
             "ihdp": self.load_predefined_ihdp_icalingam,
-            "bd": self.load_predefined_bd_icalingam,
-            "simulation_data": self.load_predefined_causalml_mode_2_icalingam,
 
         }
 
@@ -114,7 +111,6 @@ class DAGCreator:
         # CAUTION, dag_edges is not dag edges anymore
         self.dag_edges = list(dag_constraints.values())
 
-    # 类似于main函数
     def create_dag_edges(self, add_nodes_not_in_edges=False):
 
         if self.method in ["pc", "ges", "icalingam", "golem", "notears"]:
@@ -131,35 +127,8 @@ class DAGCreator:
         return [list(set(d)) for d in self.dag_edges if len(d) > 0]
 
     def return_predefined_dag(self, dataset_name):
-        """指定因果分组"""
         return self.predefined_dags[dataset_name]()
 
-    @staticmethod
-    def load_predefined_cpt_icalingam():
-        dag = [
-            ['x13', 'x7', 'x2'],
-            ['x20', 'x7', 'x4', 'x12', 'x14', 'x3', 'x11', 'x5', 'x13', 'x15', 'x16', 'x2', 'x9'],
-            ['x7', 'x12', 'x14', 'x11', 'x5', 'x13', 'x15', 'x21', 'x2', 'x16'],
-            ['x4', 'x2', 'x21'],
-            ['x0', 'x1', 'x6', 'x8', 'x10', 'x17', 'x18', 'x19', 'x22', 'x23', 'x24', 'x25']
-        ]
-        return dag
-
-
-    @staticmethod
-    def load_predefined_jobs_icalingam():
-        dag = [
-            ["x9", "x11", "x15", "x12", "x8", "x7", "x2", "x6", "x0"],
-            ["x2", "x7"],
-            ["x8", "x2", "x9", "x0"],
-            ["x8", "x2"],
-            ["x8", "x2", "x9"],
-            ["x9", "x11", "x15", "x1", "x12", "x8", "x7", "x6", "x0"],
-            ["x9", "x11", "x15", "x12", "x8", "x7", "x6", "x0"],
-            ["x1", "x7"],
-            ["x16"],
-        ]
-        return dag
 
     @staticmethod
     def load_predefined_ihdp_icalingam():
@@ -181,117 +150,6 @@ class DAGCreator:
             ['T'],
             ['x8', 'x4', 'x20', 'x21', 'x5', 'x19', 'x23', 'x18', 'x0', 'T', 'x2', 'x3', 'x15', 'x13', 'x1'],
             # ['x6', 'x7', 'x12', 'x14', 'x16', 'x17']
-        ]
-
-        # dag = [
-        #     ['x0'],
-        #     ['x0', 'x1'],
-        #     ['x0', 'x2'],
-        #     ['x3', 'x9', 'x10', 'x11', 'x13'],
-        #     ['x0', 'x2', 'x4'],
-        #     ['x5', 'x8', 'x9', 'x10', 'x11'],
-        #     ['x8'],
-        #     ['x9', 'x10', 'x11', 'x13', ],
-        #     ['x15'],
-        #     ['x18'],
-        #     ['x19'],
-        #     ['x18', 'x19', 'x20', 'x21', 'x22', 'x23', 'x24'],
-        #     ['x21'],
-        #     ['x23'],
-        #     ['T'],  # [25]
-        #     ['x0', 'x1', 'x3', 'x2', 'x4', 'x8', 'x5', 'x13', 'x15', 'x18', 'x19', 'x20', 'x21', 'x23', 'T', ],
-        #     # ['x6', 'x7', 'x12', 'x14', 'x16', 'x17']  # 不在因果分组的特征
-        # ]
-
-        return dag
-
-    @staticmethod
-    def load_predefined_bd_icalingam():
-        dag = [
-            ['x0'],
-            ['x11'],
-            ['x21'],
-            ['x0', 'x21', 'x11'],
-            # ['x1', 'x2', 'x3', 'x4', 'x5', 'x6', 'x7', 'x8', 'x9', 'x10', 'x12', 'x13', 'x14', 'x15', 'x16', 'x17', 'x18', 'x19', 'x20']
-        ]
-
-        # dag = [
-        #     ['x0'],
-        #     ['x11'],
-        #     ['x21'],
-        #     ['x21', 'x11', 'x0'],
-        #     # ['x1', 'x2', 'x3', 'x4', 'x5', 'x6', 'x7', 'x8', 'x9', 'x10', 'x12', 'x13', 'x14', 'x15', 'x16', 'x17', 'x18', 'x19', 'x20']
-        # ]
-        return dag
-
-    @staticmethod
-    def load_predefined_causalml_mode_2_icalingam():
-        # # n200_p20_sigma0.01
-        # dag = [
-        #     ['col_1', 'col_2'],
-        #     ['col_4', 'col_3', 'col_1', 'col_2', 'col_0'],
-        #     ['col_4'],
-        #     ['col_3', 'col_4', 'col_2'],
-        #     # ['col_5', 'col_6', 'col_7', 'col_8', 'col_9', 'col_10', 'col_11', 'col_12', 'col_13', 'col_14', 'col_15', 'col_16', 'col_17', 'col_18', 'col_19', 'T']
-        # ]
-
-        # # n200_p30_sigma0.01
-        # dag = [
-        #     ['col_0'],
-        #     ['col_0', 'col_2', 'col_1'],
-        #     ['col_3'],
-        #     ['col_0', 'col_4', 'col_3'],
-        #     ['col_4', 'col_0', 'col_2', 'col_3'],
-        #     # ['col_5', 'col_6', 'col_7', 'col_8', 'col_9', 'col_10', 'col_11', 'col_12', 'col_13', 'col_14', 'col_15',
-        #     # 'col_16', 'col_17', 'col_18', 'col_19', 'col_20', 'col_21', 'col_22', 'col_23', 'col_24', 'col_25', 'col_26',
-        #     # 'col_27', 'col_28', 'col_29', 'T']
-        # ]
-
-        # # n200_p40_sigma0.01
-        # dag = [
-        #     ['col_2', 'col_0'],
-        #     ['col_3', 'col_0'],
-        #     ['col_3', 'col_0', 'col_4'],
-        #     ['col_3', 'col_2', 'col_4'],
-        #     # ['col_1', 'col_5', 'col_6', 'col_7', 'col_8', 'col_9', 'col_10', 'col_11', 'col_12', 'col_13', 'col_14',
-        #     # 'col_15', 'col_16', 'col_17', 'col_18', 'col_19', 'col_20', 'col_21', 'col_22', 'col_23', 'col_24', 'col_25',
-        #     # 'col_26', 'col_27', 'col_28', 'col_29', 'col_30', 'col_31', 'col_32', 'col_33', 'col_34', 'col_35', 'col_36',
-        #     # 'col_37', 'col_38', 'col_39', 'T']
-        # ]
-
-        # # n600_p20_sigma0.01
-        # dag =[
-        #     ['col_2', 'col_1', 'col_0'],
-        #     ['col_2'],
-        #     ['col_3'],
-        #     ['col_4', 'col_2', 'col_1', 'col_0', 'col_3'],
-        #     ['col_4', 'col_2', 'col_3', 'col_0'],
-        #     # ['col_5', 'col_6', 'col_7', 'col_8', 'col_9', 'col_10', 'col_11', 'col_12', 'col_13', 'col_14', 'col_15',
-        #     # 'col_16', 'col_17', 'col_18', 'col_19', 'T']
-        # ]
-
-        # # n600_p30_sigma0.01
-        # dag = [
-        #     ['col_2'],
-        #     ['col_3'],
-        #     ['col_4', 'col_0', 'col_3', 'col_2'],
-        #     ['col_4', 'col_3', 'col_2'],
-        #     # ['col_1', 'col_5', 'col_6', 'col_7', 'col_8', 'col_9', 'col_10', 'col_11', 'col_12', 'col_13', 'col_14',
-        #     # 'col_15', 'col_16', 'col_17', 'col_18', 'col_19', 'col_20', 'col_21', 'col_22', 'col_23', 'col_24', 'col_25',
-        #     #  'col_26', 'col_27', 'col_28', 'col_29', 'T']
-        # ]
-
-        # n600_p40_sigma0.01
-        dag = [
-            ['col_0'],
-            ['col_2', 'col_1', 'col_0'],
-            ['col_0', 'col_3'],
-            ['col_4', 'col_0', 'col_3'],
-            ['col_4', 'col_2', 'col_0', 'col_3'],
-            # ['col_5', 'col_6', 'col_7', 'col_8', 'col_9', 'col_10', 'col_11', 'col_12', 'col_13', 'col_14', 'col_15',
-            # 'col_16', 'col_17', 'col_18', 'col_19', 'col_20', 'col_21', 'col_22', 'col_23', 'col_24', 'col_25', 'col_26',
-            # 'col_27', 'col_28', 'col_29', 'col_30', 'col_31', 'col_32', 'col_33', 'col_34', 'col_35', 'col_36', 'col_37',
-            #  'col_38', 'col_39', 'T']
         ]
 
         return dag
