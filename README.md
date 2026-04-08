@@ -1,6 +1,6 @@
 # 🌈 BNN-CC
 
-This is the implementation of the paper "[Causal structure-enhanced branch neural networks for interpretable and robust regression](https://cjqshu.github.io/papers/cjq/2026Cai_Causal_structure-enhanced_branch_neural_networks_for_interpretable_and_robust_regression.pdf)", published at Expert Systems With Applications (Elsevier ESWA) in 2026.
+This is the implementation of the paper "[Causal structure-enhanced branch neural networks for interpretable and robust regression](https://doi.org/10.1016/j.eswa.2026.131851)", published at Expert Systems With Applications (Elsevier ESWA) in 2026.
 
 ## 📋 Overview
 
